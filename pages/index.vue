@@ -103,7 +103,7 @@ export default Vue.extend({
         const currentQuery = this.$route.query;
         const queryPref = this.createQuery();
 
-        if (Object.keys(currentQuery) === [] && !queryPref) {
+        if (!Object.keys(currentQuery).length && !queryPref) {
           return;
         }
         if ('pref' in currentQuery && currentQuery.pref === queryPref) {
