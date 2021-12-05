@@ -5,7 +5,6 @@ const DESCRIPTION =
   '踏破した都道府県を日本地図で共有できるWebサービスです。自分がどれだけ日本を踏破したか、今まで行ったことがある都道府県をみんなに共有しよう！';
 
 const config: NuxtConfig = {
-  ssr: false,
   target: 'static',
 
   head: {
