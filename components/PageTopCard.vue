@@ -2,7 +2,7 @@
 <template>
   <glass-card class="py-4 px-6">
     <ClientOnly>
-      <h1 class="text-center text-h5 text-sm-h4 mb-2">
+      <h1 class="text-center text-h6 text-sm-h4 mb-2">
         <vue-typer
           :repeat="0"
           erase-style="select-all"
@@ -80,7 +80,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      typedText: ['日本のここまで踏破した😆', '日本踏破図🗾'],
+      typedText: ['日本のここまで踏破した', '日本踏破図🗾'],
       quotation: 'https://kotobank.jp/word/%E8%B8%8F%E7%A0%B4-581166',
     };
   },

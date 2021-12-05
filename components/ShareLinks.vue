@@ -6,7 +6,7 @@
     </div>
 
     <v-row justify="center" dense>
-      <v-col v-for="link in links" :key="link.text" cols="6" sm="4" lg="2">
+      <v-col v-for="link in links" :key="link.text" cols="12" sm="4" lg="2">
         <glass-button
           dark
           block
@@ -16,8 +16,8 @@
         >
           <div class="mr-2">
             <v-img
-              height="30"
-              width="30"
+              height="28"
+              width="28"
               contain
               :src="require(`@/assets/img/${link.icon}`)"
             />
