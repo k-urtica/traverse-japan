@@ -3,17 +3,20 @@
   autoLaunch = false
 
 [build]
-  command = "yarn generate"
+  command = "npm run generate"
   publish = "dist"
-  functions = "functions"
+  functions = ".output/server"
 
 [build.environment]
   TZ="Asia/Tokyo"
 
-[functions]
-  node_bundler = "esbuild"
-  external_node_modules = ["jsdom"]
-  included_files = ["./assets/img/map-mobile.svg"]
-
+# [functions]
+#   node_bundler = "esbuild"
+#   external_node_modules = ["jsdom"]
+#   included_files = ["./assets/img/map-mobile.svg"]
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/index"
+  status = 200
 
 
