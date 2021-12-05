@@ -52,16 +52,15 @@ export default Vue.extend({
     PageFooterCard,
   },
   head(): MetaInfo {
-    let title;
-    let titleTemplate;
+    let title = '日本踏破図🗾';
+    let titleTemplate = '%s | 踏破した都道府県を日本地図で共有できるサービス';
+    let ogTitle = `${title} | 踏破した都道府県を日本地図で共有できるサービス`;
 
     const queryPref = this.$route.query.pref;
     if (queryPref?.length) {
       titleTemplate = '%s | 日本踏破図🗾';
       title = `日本の${queryPref.length / 2}都道府県を踏破`;
-    } else {
-      titleTemplate = '%s | 踏破した都道府県を日本地図で共有できるサービス';
-      title = '日本踏破図🗾';
+      ogTitle = `${title} | 日本踏破図🗾`;
     }
     const BASE_URL = this.$config.baseURL;
     const FULL_PATH = this.$route.fullPath;
@@ -70,6 +69,11 @@ export default Vue.extend({
       titleTemplate,
       title,
       meta: [
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: ogTitle,
+        },
         {
           hid: 'og:url',
           property: 'og:url',

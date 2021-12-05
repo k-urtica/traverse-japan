@@ -30,6 +30,11 @@ const config: NuxtConfig = {
         property: 'og:url',
         content: BASE_URL,
       },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: '日本踏破図🗾 | 踏破した都道府県を日本地図で共有できるサービス',
+      },
       { hid: 'og:site_name', property: 'og:site_name', content: '日本踏破図🗾' },
       {
         hid: 'og:description',
