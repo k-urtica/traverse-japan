@@ -1,0 +1,19 @@
+[dev]
+  command = "yarn dev"
+  autoLaunch = false
+
+[build]
+  command = "yarn generate"
+  publish = "dist"
+  functions = "functions"
+
+[build.environment]
+  TZ="Asia/Tokyo"
+
+[functions]
+  node_bundler = "esbuild"
+  external_node_modules = ["jsdom"]
+  included_files = ["./assets/img/map-mobile.svg"]
+
+
+
