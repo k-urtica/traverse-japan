@@ -98,6 +98,10 @@ export default defineNuxtConfig({
     baseURL: BASE_URL,
   },
 
+  nitro: {
+    preset: 'netlify',
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 });
