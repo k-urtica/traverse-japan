@@ -91,3 +91,6 @@ sw.*
 
 # netlify function
 .netlify
+
+# nuxt nitro
+.output

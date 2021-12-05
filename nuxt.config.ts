@@ -1,10 +1,10 @@
-import { NuxtConfig } from '@nuxt/types';
+import { defineNuxtConfig } from '@nuxt/bridge';
 
 const BASE_URL = process.env.BASE_URL || 'http://localhost:3000';
 const DESCRIPTION =
   '踏破した都道府県を日本地図で共有できるWebサービスです。自分がどれだけ日本を踏破したか、今まで行ったことがある都道府県をみんなに共有しよう！';
 
-const config: NuxtConfig = {
+export default defineNuxtConfig({
   target: 'static',
 
   head: {
@@ -79,7 +79,7 @@ const config: NuxtConfig = {
 
   components: true,
 
-  buildModules: ['@nuxt/typescript-build', '@nuxtjs/vuetify'],
+  buildModules: ['@nuxtjs/vuetify'],
 
   modules: ['@nuxtjs/sitemap'],
 
@@ -100,6 +100,6 @@ const config: NuxtConfig = {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
-};
+});
 
-export default config;
+// export default config;
