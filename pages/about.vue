@@ -79,6 +79,20 @@
   </v-row>
 </template>
 
+<script lang="ts">
+import Vue from 'vue';
+import type { MetaInfo } from 'vue-meta';
+
+export default Vue.extend({
+  head(): MetaInfo {
+    return {
+      titleTemplate: '%s | 日本踏破図🗾',
+      title: 'About',
+    };
+  },
+});
+</script>
+
 <style lang="scss" scoped>
 .section-title {
   font-weight: inherit;
