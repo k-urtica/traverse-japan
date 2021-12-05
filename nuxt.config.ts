@@ -76,12 +76,17 @@ const config: NuxtConfig = {
 
   buildModules: ['@nuxt/typescript-build', '@nuxtjs/vuetify'],
 
-  modules: [],
+  modules: ['@nuxtjs/sitemap'],
 
   vuetify: {
     customVariables: ['@/assets/css/variables.scss'],
     optionsPath: '@/plugins/vuetify.options.ts',
     defaultAssets: false,
+  },
+
+  sitemap: {
+    hostname: BASE_URL,
+    gzip: true,
   },
 
   publicRuntimeConfig: {
