@@ -44,6 +44,7 @@ const ogpHandler: Handler = async (e) => {
   return {
     statusCode: 200,
     headers: {
+      'Accept-Ranges': 'bytes',
       'Content-Type': 'image/png',
       'Content-Length': image?.length,
     },
