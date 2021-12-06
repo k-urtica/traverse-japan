@@ -46,6 +46,17 @@ export default defineNuxtConfig({
         property: 'og:image',
         content: BASE_URL + '/ogp.png',
       },
+      {
+        hid: 'og:image:width',
+        property: 'og:image:width',
+        content: '1200',
+      },
+      {
+        hid: 'og:image:height',
+        property: 'og:image:height',
+        content: '630',
+      },
+
       { hid: 'og:type', property: 'og:type', content: 'website' },
       // Twitter
       {
