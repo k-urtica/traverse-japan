@@ -6,7 +6,6 @@ const DESCRIPTION =
 
 export default defineNuxtConfig({
   ssr: true,
-  // target: 'static',
 
   head: {
     titleTemplate: '%s | 踏破した都道府県を日本地図で共有できるサービス',
@@ -91,33 +90,25 @@ export default defineNuxtConfig({
 
   components: true,
 
-  buildModules: ['@nuxtjs/vuetify'],
+  buildModules: [
+    [
+      '@nuxtjs/vuetify',
+      {
+        customVariables: ['@/assets/css/variables.scss'],
+        optionsPath: '@/plugins/vuetify.options.ts',
+        defaultAssets: false,
+      },
+    ],
+  ],
 
-  modules: ['@nuxtjs/sitemap'],
-
-  vuetify: {
-    customVariables: ['@/assets/css/variables.scss'],
-    optionsPath: '@/plugins/vuetify.options.ts',
-    defaultAssets: false,
-  },
-
-  sitemap: {
-    hostname: BASE_URL,
-    gzip: true,
-  },
+  modules: [['@nuxtjs/sitemap', { hostname: BASE_URL, gzip: true }]],
 
   publicRuntimeConfig: {
     baseURL: BASE_URL,
   },
-
-  // nitro: {
-  //   preset: 'netlify',
-  // },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     extractCSS: true,
   },
 });
-
-// export default config;
