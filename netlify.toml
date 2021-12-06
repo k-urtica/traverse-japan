@@ -3,7 +3,7 @@
   autoLaunch = false
 
 [build]
-  command = "yarn generate"
+  command = "yarn build"
   publish = "dist"
   functions = "functions"
 
