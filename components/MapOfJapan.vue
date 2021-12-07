@@ -156,11 +156,13 @@ export default Vue.extend({
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
 
-    &:hover {
-      fill: var(--fill-hover) !important;
-      stroke-width: 2px;
-      stroke: var(--stroke--hover);
-      transition-timing-function: ease-in-out;
+    @media (hover: hover) {
+      &:hover {
+        fill: var(--fill-hover) !important;
+        stroke-width: 2px;
+        stroke: var(--stroke--hover);
+        transition-timing-function: ease-in-out;
+      }
     }
   }
 
