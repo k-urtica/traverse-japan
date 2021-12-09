@@ -1,6 +1,8 @@
 import { defineNuxtConfig } from '@nuxt/bridge';
 
 const BASE_URL = process.env.BASE_URL || 'http://localhost:3000';
+const TITLE_SHORT = '日本踏破図🗾';
+const TITLE = `${TITLE_SHORT} | 踏破した都道府県を日本地図で共有できるサービス`;
 const DESCRIPTION =
   '踏破した都道府県を日本地図で共有できるWebサービスです。自分がどれだけ日本を踏破したか、今まで行ったことがある都道府県をみんなに共有しよう！';
 
@@ -9,7 +11,7 @@ export default defineNuxtConfig({
 
   head: {
     titleTemplate: '%s | 踏破した都道府県を日本地図で共有できるサービス',
-    title: '日本踏破図🗾',
+    title: TITLE_SHORT,
     htmlAttrs: {
       lang: 'ja',
       prefix: 'og: http://ogp.me/ns#',
@@ -33,9 +35,9 @@ export default defineNuxtConfig({
       {
         hid: 'og:title',
         property: 'og:title',
-        content: '日本踏破図🗾 | 踏破した都道府県を日本地図で共有できるサービス',
+        content: TITLE,
       },
-      { hid: 'og:site_name', property: 'og:site_name', content: '日本踏破図🗾' },
+      { hid: 'og:site_name', property: 'og:site_name', content: TITLE },
       {
         hid: 'og:description',
         property: 'og:description',
@@ -97,6 +99,25 @@ export default defineNuxtConfig({
         customVariables: ['@/assets/css/variables.scss'],
         optionsPath: '@/plugins/vuetify.options.ts',
         defaultAssets: false,
+      },
+    ],
+    [
+      '@nuxtjs/pwa',
+      {
+        manifest: {
+          lang: 'ja',
+          name: TITLE,
+          short_name: TITLE_SHORT,
+          description: DESCRIPTION,
+          display: 'standalone',
+          theme_color: '#180E86',
+          background_color: '#180E86',
+          start_url: '/',
+          useWebmanifestExtension: false,
+        },
+        workbox: {
+          offline: false,
+        },
       },
     ],
   ],
