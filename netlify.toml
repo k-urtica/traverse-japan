@@ -1,6 +1,8 @@
 [dev]
-  command = "yarn dev"
+  command = "yarn start"
   autoLaunch = false
+  port = 8888
+  targetPort = 3000
 
 [build]
   command = "yarn build"
@@ -13,7 +15,7 @@
 [functions]
   node_bundler = "esbuild"
   external_node_modules = ["jsdom"]
-  included_files = ["./assets/img/map-mobile.svg"]
+  included_files = ["./assets/img/map-mobile.svg", "./assets/img/base.png", "./assets/font/Mamelon-for-ogp.otf"]
 
 
 
