@@ -29,6 +29,7 @@
     "@nuxt/types": "^2.15.7",
     "@nuxtjs/eslint-config": "^7.0.0",
     "@nuxtjs/eslint-config-typescript": "^7.0.2",
+    "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/vuetify": "^1.12.1",
     "@types/dom-to-image": "^2.6.4",
     "@types/sharp": "^0.29.4",
