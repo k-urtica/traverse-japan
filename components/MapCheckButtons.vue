@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="font-weight-bold text-sm-h6 white--text mb-3">
-      行ったことがある都道府県を選択する
+      踏破した都道府県を選択する
       <v-divider dark />
     </div>
     <v-row no-gutters>

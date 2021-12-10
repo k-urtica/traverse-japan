@@ -10,9 +10,9 @@
     </v-col>
     <v-col cols="12" sm="auto">
       <glass-button class="py-5 py-sm-6" block dark @click.native="fillAll()">
-        <v-icon color="pink darken-1" class="mr-2">{{ mdiFormatColorFill }}</v-icon>
+        <v-icon color="pink lighten-2" class="mr-2">{{ mdiFlagVariant }}</v-icon>
         <span class="font-weight-bold text-sm-subtitle-1 grey--text text--lighten-5">
-          地図を全て塗る
+          日本を踏破する
         </span>
       </glass-button>
     </v-col>
@@ -69,7 +69,7 @@
 import Vue from 'vue';
 import {
   mdiDelete,
-  mdiFormatColorFill,
+  mdiFlagVariant,
   mdiPalette,
   mdiContentCopy,
   mdiDownload,
@@ -90,7 +90,7 @@ export default Vue.extend({
       processing: false,
       snackbar: false,
       mdiDelete,
-      mdiFormatColorFill,
+      mdiFlagVariant,
       mdiPalette,
       mdiContentCopy,
       mdiDownload,
