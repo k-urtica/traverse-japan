@@ -65,6 +65,9 @@ export default Vue.extend({
     const BASE_URL = this.$config.baseURL;
     const FULL_PATH = this.$route.fullPath;
 
+    const OGIMAGE =
+      FULL_PATH === '/' ? `${BASE_URL}/ogp.png` : `${BASE_URL}/api/ogp${FULL_PATH}`;
+
     return {
       titleTemplate,
       title,
@@ -82,12 +85,12 @@ export default Vue.extend({
         {
           hid: 'og:image',
           property: 'og:image',
-          content: `${BASE_URL}/api/ogp${FULL_PATH}`,
+          content: OGIMAGE,
         },
         {
           hid: 'twitter:image',
           name: 'twitter:image',
-          content: `${BASE_URL}/api/ogp${FULL_PATH}`,
+          content: OGIMAGE,
         },
       ],
     };
@@ -115,7 +118,7 @@ export default Vue.extend({
           return;
         }
 
-        this.$router.replace({ path: '/', query: { pref: queryPref } });
+        this.$router.replace({ path: '/', query: { pref: queryPref || '' } });
       },
     },
   },
