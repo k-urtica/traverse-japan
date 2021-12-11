@@ -1,22 +1,20 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { builder, Handler } from '@netlify/functions';
-
 import sharp from 'sharp';
 import TextToSVG from 'text-to-svg';
+import type { VercelRequest, VercelResponse } from '@vercel/node';
 
 const FONT = path.resolve(__dirname, '../assets/font/Mamelon-for-ogp.otf');
 
-// eslint-disable-next-line require-await
-const ogpHandler: Handler = async (e) => {
-  const param = e.rawQuery;
-  const codes = param.replace('pref=', '').match(/.{2}/g);
+export default async (req: VercelRequest, res: VercelResponse) => {
+  const { pref } = req.query;
+  const codes = (pref as string)?.match(/.{2}/g);
 
   const svg = fs.readFileSync(path.resolve(__dirname, '../assets/img/map-mobile.svg'));
   const svgWkString = svg.toString('utf-8');
 
   let svgString = '';
-  if (codes !== null) {
+  if (codes) {
     let dc;
     for (let s of svgWkString.split(/\r\n|\n/)) {
       dc = s.match(/data-code="[0-9]{2}/);
@@ -68,17 +66,9 @@ const ogpHandler: Handler = async (e) => {
     ])
     .toBuffer();
 
-  return {
-    statusCode: 200,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Accept-Ranges': 'bytes',
-      'Content-Type': 'image/png',
-      'Content-Length': ogpImage?.length,
-    },
-    body: ogpImage?.toString('base64'),
-    isBase64Encoded: true,
-  };
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'image/png');
+  res.end(ogpImage);
 };
 
 const textToSVG = (text: string, fontSize: number) => {
@@ -91,6 +81,3 @@ const textToSVG = (text: string, fontSize: number) => {
   };
   return TextToSVG.loadSync(FONT).getSVG(text, svgOptions);
 };
-
-const handler = builder(ogpHandler);
-export { handler };

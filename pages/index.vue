@@ -82,12 +82,12 @@ export default Vue.extend({
         {
           hid: 'og:image',
           property: 'og:image',
-          content: `${BASE_URL}/.netlify/functions/ogp${FULL_PATH}`,
+          content: `${BASE_URL}/api/ogp${FULL_PATH}`,
         },
         {
           hid: 'twitter:image',
           name: 'twitter:image',
-          content: `${BASE_URL}/.netlify/functions/ogp${FULL_PATH}`,
+          content: `${BASE_URL}/api/ogp${FULL_PATH}`,
         },
       ],
     };
