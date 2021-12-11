@@ -94,3 +94,5 @@ sw.*
 
 # nuxt nitro
 .output
+
+.vercel
