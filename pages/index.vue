@@ -108,29 +108,28 @@ export default Vue.extend({
       deep: true,
       immediate: false,
       handler() {
-        const currentQuery = this.$route.query;
+        const { pref } = this.$route.query;
         const queryPref = this.createQuery();
 
-        if (!Object.keys(currentQuery).length && !queryPref) {
+        if (!pref && !queryPref) {
           return;
         }
-        if ('pref' in currentQuery && currentQuery.pref === queryPref) {
+        if (pref === queryPref) {
           return;
         }
-
-        this.$router.replace({ path: '/', query: { pref: queryPref || '' } });
+        this.$router.replace({ path: '/', query: { pref: queryPref } });
       },
     },
   },
   methods: {
-    createQuery(): string | undefined {
+    createQuery(): string {
       let query = '';
       for (const pref of this.prefectures) {
         if (pref.isChecked) {
           query += pref.code;
         }
       }
-      return query === '' ? undefined : query;
+      return query;
     },
   },
 });
