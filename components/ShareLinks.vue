@@ -50,7 +50,7 @@ export default Vue.extend({
   computed: {
     shareLink() {
       return (sns: string) => {
-        const pageUrl = this.$config.baseURL + this.$route.fullPath;
+        const pageUrl = this.$config.baseURL;
         const pageTitle = encodeURI(document.title);
 
         let link: string = '';
