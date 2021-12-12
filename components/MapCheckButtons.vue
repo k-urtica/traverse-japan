@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <glass-card class="pa-6">
     <div class="font-weight-bold text-sm-h6 white--text mb-3">
       踏破した都道府県を選択する
       <v-divider dark />
@@ -20,7 +20,7 @@
         </v-checkbox>
       </v-col>
     </v-row>
-  </div>
+  </glass-card>
 </template>
 
 <script lang="ts">

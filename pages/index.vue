@@ -3,27 +3,16 @@
     <v-col cols="12">
       <page-top-card class="mb-4" />
 
-      <glass-card class="pa-3 pa-sm-6 mb-6">
-        <map-of-japan v-show="isMapLoaded" />
+      <map-of-japan v-show="isMapLoaded" class="mb-6" />
+      <v-skeleton-loader v-if="!isMapLoaded" type="image" height="690px" />
 
-        <v-skeleton-loader v-if="!isMapLoaded" type="image" height="690px" />
-      </glass-card>
+      <map-menu class="mb-6" />
 
-      <div class="text-center">
-        <glass-card class="pa-6 mb-6">
-          <map-menu />
-        </glass-card>
-      </div>
-
-      <glass-card class="pa-6 mb-8">
-        <map-check-buttons v-if="isMapLoaded" />
-        <v-skeleton-loader v-if="!isMapLoaded" type="image" height="300px" />
-      </glass-card>
+      <map-check-buttons v-if="isMapLoaded" class="mb-8" />
+      <v-skeleton-loader v-if="!isMapLoaded" type="image" height="300px" />
 
       <share-links class="mb-6" />
-
       <v-divider dark class="my-5" />
-
       <page-footer-card />
     </v-col>
   </v-row>
@@ -37,14 +26,12 @@ import { MapModule } from '@/store';
 import MapCheckButtons from '@/components/MapCheckButtons.vue';
 import MapOfJapan from '@/components/MapOfJapan.vue';
 import MapMenu from '@/components/MapMenu.vue';
-import GlassCard from '@/components/GlassParts/GlassCard.vue';
 import PageTopCard from '@/components/PageTopCard.vue';
 import ShareLinks from '@/components/ShareLinks.vue';
 import PageFooterCard from '~/components/PageFooterCard.vue';
 
 export default Vue.extend({
   components: {
-    GlassCard,
     MapOfJapan,
     MapMenu,
     MapCheckButtons,

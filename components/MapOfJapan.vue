@@ -1,5 +1,5 @@
 <template>
-  <div class="text-center">
+  <glass-card class="pa-3 pa-sm-6 text-center">
     <div id="map-wrapper">
       <h2
         class="font-weight-bold text-subtitle-1 text-sm-h5 amber--text text--accent-1 mb-3"
@@ -13,7 +13,7 @@
     <div class="mt-5">
       <map-share />
     </div>
-  </div>
+  </glass-card>
 </template>
 
 <script lang="ts">

@@ -1,18 +1,20 @@
 <template>
-  <v-row align="center" justify="center" dense>
-    <v-col v-for="(menu, i) in menus" :key="i" cols="12" sm="auto">
-      <component :is="menu.component" />
-    </v-col>
+  <glass-card class="pa-6">
+    <v-row align="center" justify="center" dense>
+      <v-col v-for="(menu, i) in menus" :key="i" cols="12" sm="auto">
+        <component :is="menu.component" />
+      </v-col>
 
-    <v-divider vertical dark class="ma-1 hidden-sm-and-down" />
+      <v-divider vertical dark class="ma-1 hidden-sm-and-down" />
 
-    <v-col cols="5" sm="auto">
-      <map-copy />
-    </v-col>
-    <v-col cols="7" sm="auto">
-      <map-download />
-    </v-col>
-  </v-row>
+      <v-col cols="5" sm="auto">
+        <map-copy />
+      </v-col>
+      <v-col cols="7" sm="auto">
+        <map-download />
+      </v-col>
+    </v-row>
+  </glass-card>
 </template>
 
 <script lang="ts">
