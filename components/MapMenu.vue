@@ -24,6 +24,7 @@ import ChangeMapColor from '@/components/MapMenus/ChangeMapColor.vue';
 import FillAllMap from '@/components/MapMenus/FillAllMap.vue';
 import MapCopy from '@/components/MapMenus/MapCopy.vue';
 import MapDownload from '@/components/MapMenus/MapDownload.vue';
+import GlassCard from '@/components/GlassParts/GlassCard.vue';
 
 export default Vue.extend({
   components: {
@@ -32,6 +33,7 @@ export default Vue.extend({
     FillAllMap,
     MapCopy,
     MapDownload,
+    GlassCard,
   },
   data() {
     return {

@@ -26,8 +26,12 @@
 <script lang="ts">
 import Vue from 'vue';
 import { MapModule } from '@/store';
+import GlassCard from '@/components/GlassParts/GlassCard.vue';
 
 export default Vue.extend({
+  components: {
+    GlassCard,
+  },
   computed: {
     prefectures() {
       return MapModule.getPrefectures;

@@ -32,10 +32,12 @@
 <script lang="ts">
 import Vue from 'vue';
 import GlassCard from '@/components/GlassParts/GlassCard.vue';
+import GlassButton from '@/components/GlassParts/GlassButton.vue';
 
 export default Vue.extend({
   components: {
     GlassCard,
+    GlassButton,
   },
   data() {
     return {

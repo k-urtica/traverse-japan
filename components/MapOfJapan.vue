@@ -20,10 +20,11 @@
 import Vue from 'vue';
 import { MapModule } from '@/store';
 import { Prefectures } from '@/store/map';
+import GlassCard from '@/components/GlassParts/GlassCard.vue';
 import MapShare from '@/components/MapShare.vue';
 
 export default Vue.extend({
-  components: { MapShare },
+  components: { GlassCard, MapShare },
   computed: {
     prefectures() {
       return MapModule.getPrefectures;

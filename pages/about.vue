@@ -82,8 +82,12 @@
 <script lang="ts">
 import Vue from 'vue';
 import type { MetaInfo } from 'vue-meta';
+import GlassCard from '@/components/GlassParts/GlassCard.vue';
 
 export default Vue.extend({
+  components: {
+    GlassCard,
+  },
   head(): MetaInfo {
     return {
       titleTemplate: '%s | 日本踏破図🗾',
