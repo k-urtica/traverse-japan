@@ -90,7 +90,7 @@ export default defineNuxtConfig({
 
   plugins: [],
 
-  components: true,
+  components: [{ path: '@/components', pathPrefix: false }],
 
   buildModules: [
     [
