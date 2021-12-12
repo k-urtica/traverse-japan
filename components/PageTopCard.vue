@@ -55,7 +55,7 @@
         </div>
         <v-divider dark class="mb-3" />
         <div
-          class="pink--text text--accent-1 text-center"
+          class="pink--text text--lighten-4 text-center"
           v-html="budouX('...🤔 難しく考えず、旅行した都道府県を塗ろう❗')"
         />
       </div>
@@ -99,13 +99,15 @@ export default Vue.extend({
 }
 
 .dialog-btn {
-  box-shadow: rgba(243, 104, 220, 0.35) 0px 0px 12px;
+  box-shadow: rgba(102, 103, 171, 0.8) 0px 0px 12px;
 }
 .dialog {
-  background-image: radial-gradient(
-    circle farthest-corner at -4% -12.9%,
-    rgba(74, 98, 110, 0.96) 0.3%,
-    rgba(30, 33, 48, 0.96) 90.2%
-  );
+  background-image: linear-gradient(
+      45deg,
+      rgba(130, 89, 219, 0.2),
+      rgba(44, 192, 226, 0.2),
+      rgba(182, 103, 181, 0.2)
+    ),
+    linear-gradient(135deg, rgb(39, 20, 149), rgb(65, 82, 185), rgb(91, 144, 220));
 }
 </style>
