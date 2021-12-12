@@ -69,10 +69,10 @@ export default Vue.extend({
     let titleTemplate = '%s | 踏破した都道府県を日本地図で共有できるサービス';
     let ogTitle = `${title} | 踏破した都道府県を日本地図で共有できるサービス`;
 
-    const queryPref = this.$route.query.pref;
-    if (queryPref?.length) {
+    const { pref } = this.$route.query;
+    if (pref) {
       titleTemplate = '%s | 日本踏破図🗾';
-      title = `日本の${queryPref.length / 2}都道府県を踏破`;
+      title = `日本の${pref.length / 2}都道府県を踏破`;
       ogTitle = `${title} | 日本踏破図🗾`;
     }
     const BASE_URL = this.$config.baseURL;
