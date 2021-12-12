@@ -12,7 +12,7 @@
           hide-details
           :color="mapColors.visited"
           :input-value="prefCheck(pref.code)"
-          @change="(e) => (prefCheck = [e, pref.code])"
+          @change="(e) => (prefCheck = { isChecked: e, code: pref.code })"
         >
           <template #label>
             <span class="white--text">{{ pref.name }}</span>
@@ -38,9 +38,8 @@ export default Vue.extend({
           return MapModule.isPrefVisited(code);
         };
       },
-      set(val: [boolean, string]) {
-        const isChecked = val[0];
-        const code = val[1];
+      set(param: { isChecked: boolean; code: string }) {
+        const { isChecked, code } = param;
         const color = isChecked ? this.mapColors.visited : this.mapColors.base;
         MapModule.togglePrefecture(code);
         MapModule.fillPrefecture({ code, color });

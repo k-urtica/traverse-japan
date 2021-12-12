@@ -18,19 +18,12 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { mdiTwitter } from '@mdi/js';
 import { MapModule } from '@/store';
 import { Prefectures } from '@/store/map';
 import MapShare from '@/components/MapShare.vue';
 
 export default Vue.extend({
   components: { MapShare },
-  data() {
-    return {
-      // colorForMouseLeave: '',
-      mdiTwitter,
-    };
-  },
   computed: {
     prefectures() {
       return MapModule.getPrefectures;
@@ -96,20 +89,9 @@ export default Vue.extend({
           isChecked: false,
         });
 
-        // pref.addEventListener('mouseover', (event) => {
-        //   const svgEl = event.currentTarget as SVGElement;
-        //   this.colorForMouseLeave = svgEl.style.fill;
-        //   svgEl.style.fill = this.mapColors.hover;
-        // });
-
-        // pref.addEventListener('mouseleave', (event) => {
-        //   (event.currentTarget as SVGElement).style.fill = this.colorForMouseLeave;
-        // });
-
         pref.addEventListener('click', (event) => {
           const svgEl = event.currentTarget as SVGElement;
           this.prefClick(svgEl);
-          // this.colorForMouseLeave = svgEl.style.fill;
         });
       });
 

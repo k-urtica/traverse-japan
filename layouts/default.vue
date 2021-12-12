@@ -47,4 +47,8 @@ export default Vue.extend({
     rgb(19, 59, 130) 100%
   );
 }
+
+::v-deep .emoji {
+  font-weight: initial !important;
+}
 </style>

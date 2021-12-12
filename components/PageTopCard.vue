@@ -92,12 +92,10 @@ export default Vue.extend({
 });
 </script>
 
-<style lang="scss">
-.vue-typer {
-  .custom.char {
-    color: #ffca28;
-    text-shadow: rgba(255, 255, 255, 0.4) 0px 0px 8px;
-  }
+<style lang="scss" scoped>
+.vue-typer ::v-deep .custom.char {
+  color: #ffca28;
+  text-shadow: rgba(255, 255, 255, 0.4) 0px 0px 8px;
 }
 
 .dialog-btn {

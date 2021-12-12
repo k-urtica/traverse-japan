@@ -57,7 +57,6 @@ export default class Map extends VuexModule {
   }
 
   get getMapNode() {
-    // TODO: 仮
     return document.getElementById('map-wrapper');
   }
 

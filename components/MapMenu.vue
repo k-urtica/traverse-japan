@@ -138,9 +138,3 @@ export default Vue.extend({
   },
 });
 </script>
-
-<style lang="scss">
-.emoji {
-  font-weight: initial !important;
-}
-</style>
