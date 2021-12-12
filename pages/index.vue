@@ -32,6 +32,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import type { MetaInfo } from 'vue-meta';
+import { Context } from '@nuxt/types';
 import { MapModule } from '@/store';
 import MapCheckButtons from '@/components/MapCheckButtons.vue';
 import MapOfJapan from '@/components/MapOfJapan.vue';
@@ -50,6 +51,18 @@ export default Vue.extend({
     PageTopCard,
     ShareLinks,
     PageFooterCard,
+  },
+  asyncData({ route }: Context) {
+    const { bc, vc, hc } = route.query;
+    if (bc) {
+      MapModule.changeColor({ target: 'base', color: bc as string });
+    }
+    if (vc) {
+      MapModule.changeColor({ target: 'visited', color: vc as string });
+    }
+    if (hc) {
+      MapModule.changeColor({ target: 'hover', color: hc as string });
+    }
   },
   head(): MetaInfo {
     let title = '日本踏破図🗾';
@@ -102,13 +115,16 @@ export default Vue.extend({
     isMapLoaded() {
       return MapModule.mapLoaded;
     },
+    colors() {
+      return MapModule.getColors;
+    },
   },
   watch: {
     prefectures: {
       deep: true,
       immediate: false,
       handler() {
-        const { pref } = this.$route.query;
+        const { pref, bc, vc, hc } = this.$route.query;
         const queryPref = this.createQuery();
 
         if (!pref && !queryPref) {
@@ -117,7 +133,24 @@ export default Vue.extend({
         if (pref === queryPref) {
           return;
         }
-        this.$router.replace({ path: '/', query: { pref: queryPref } });
+
+        this.$router.replace({ path: '/', query: { pref: queryPref, bc, vc, hc } });
+      },
+    },
+    colors: {
+      deep: true,
+      immediate: false,
+      handler() {
+        const { pref, bc, vc, hc } = this.$route.query;
+        const { base, visited, hover } = this.colors;
+        if (base === bc && vc === visited && hc === hover) {
+          return;
+        }
+
+        this.$router.replace({
+          path: '/',
+          query: { pref, bc: base, vc: visited, hc: hover },
+        });
       },
     },
   },
