@@ -2,13 +2,7 @@
   <div class="text-center">
     <div id="map-wrapper">
       <h2
-        class="
-          font-weight-bold
-          text-subtitle-1 text-sm-h5
-          amber--text
-          text--accent-1
-          mb-3
-        "
+        class="font-weight-bold text-subtitle-1 text-sm-h5 amber--text text--accent-1 mb-3"
       >
         踏破した都道府県 {{ distPrefsCount }} <span class="emoji">🗻</span> 日本の
         {{ distPrefsRatio }}%
@@ -61,6 +55,21 @@ export default Vue.extend({
     },
     distPrefsRatio(): number {
       return Math.floor((this.distPrefsCount / 47) * 100);
+    },
+  },
+  watch: {
+    mapColors: {
+      deep: true,
+      immediate: false,
+      handler() {
+        this.prefectures.forEach((e) => {
+          if (e.isChecked) {
+            MapModule.fillPrefecture({ code: e.code, color: this.mapColors.visited });
+          } else {
+            MapModule.fillPrefecture({ code: e.code, color: this.mapColors.base });
+          }
+        });
+      },
     },
   },
   async mounted() {
@@ -127,19 +136,16 @@ export default Vue.extend({
       MapModule.togglePrefecture(code);
     },
     fillOnReload() {
-      if (Object.keys(this.$route.query).length) {
-        const prefs = this.$route.query.pref as string;
-        if (!prefs) {
-          return;
+      const { pref } = this.$route.query;
+      const codes = (pref as string)?.match(/.{2}/g);
+      this.prefectures.forEach((e) => {
+        if (codes?.includes(e.code)) {
+          MapModule.togglePrefecture(e.code);
+          MapModule.fillPrefecture({ code: e.code, color: this.mapColors.visited });
+        } else {
+          MapModule.fillPrefecture({ code: e.code, color: this.mapColors.base });
         }
-        const prefCodes = prefs.match(/.{2}/g);
-        const color = this.mapColors.visited;
-
-        prefCodes?.forEach((code: string) => {
-          MapModule.togglePrefecture(code);
-          MapModule.fillPrefecture({ code, color });
-        });
-      }
+      });
     },
   },
 });

@@ -9,6 +9,9 @@
       </glass-button>
     </v-col>
     <v-col cols="12" sm="auto">
+      <change-map-color />
+    </v-col>
+    <v-col cols="12" sm="auto">
       <glass-button class="py-5 py-sm-6" block dark @click.native="fillAll()">
         <v-icon color="pink lighten-2" class="mr-2">{{ mdiFlagVariant }}</v-icon>
         <span class="font-weight-bold text-sm-subtitle-1 grey--text text--lighten-5">
@@ -16,14 +19,6 @@
         </span>
       </glass-button>
     </v-col>
-    <!-- <v-col cols="12" sm="auto">
-      <glass-button class="py-5 py-sm-6" block dark>
-        <v-icon color="amber" class="mr-2">{{ mdiPalette }}</v-icon>
-        <span class="font-weight-bold text-sm-subtitle-1 grey--text text--lighten-5">
-          地図の色を変える
-        </span>
-      </glass-button>
-    </v-col> -->
 
     <v-divider vertical dark class="ma-1 hidden-sm-and-down" />
 
@@ -78,10 +73,12 @@ import {
 import domtoimage from 'dom-to-image';
 import { MapModule } from '@/store';
 import GlassButton from '@/components/GlassParts/GlassButton.vue';
+import ChangeMapColor from '@/components/MapMenus/ChangeMapColor.vue';
 
 export default Vue.extend({
   components: {
     GlassButton,
+    ChangeMapColor,
   },
   data() {
     return {

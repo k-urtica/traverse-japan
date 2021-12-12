@@ -8,6 +8,20 @@ export type Prefectures = {
   isChecked: boolean;
 }[];
 
+const DEFAULT_COLOR = {
+  base: '#e3f2fd',
+  visited: '#f8bbd0',
+  hover: '#f8bbd0',
+  stroke: '#d32f2f',
+};
+
+export type MapColors = {
+  base: string;
+  visited: string;
+  hover: string;
+  stroke: string;
+};
+
 @Module({
   name: 'map',
   stateFactory: true,
@@ -24,12 +38,7 @@ export default class Map extends VuexModule {
   private isMapLoaded = false;
 
   /** マップカラー */
-  private colors = {
-    base: '#e3f2fd',
-    visited: '#f8bbd0',
-    hover: '#f8bbd0',
-    stroke: '#d32f2f',
-  };
+  private colors: MapColors = DEFAULT_COLOR;
 
   get getPrefectures() {
     return this.prefectures;
@@ -106,6 +115,17 @@ export default class Map extends VuexModule {
     });
   }
 
+  @Mutation
+  private CHANGE_COLOR(params: { target: keyof MapColors; color: string }) {
+    const { target, color } = params;
+    this.colors[target] = color;
+  }
+
+  @Mutation
+  private RESET_COLOR() {
+    this.colors = Object.assign({}, this.colors, DEFAULT_COLOR);
+  }
+
   @Action
   setPrefectures(prefectures: Prefectures) {
     this.SET_PREFECTURES(prefectures);
@@ -139,5 +159,15 @@ export default class Map extends VuexModule {
   @Action
   fillAll() {
     this.FILL_ALL();
+  }
+
+  @Action
+  changeColor(params: { target: keyof MapColors; color: string }) {
+    this.CHANGE_COLOR(params);
+  }
+
+  @Action
+  resetColor() {
+    this.RESET_COLOR();
   }
 }

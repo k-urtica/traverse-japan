@@ -18,14 +18,13 @@ export default Vue.extend({
   computed: {
     shareUrl() {
       const pageTitle = encodeURI(document.title);
-      const pageUrl = this.$config.baseURL + this.$route.fullPath;
+      const pageUrl = encodeURIComponent(this.$config.baseURL + this.$route.fullPath);
       return `https://twitter.com/intent/tweet?url=${pageUrl}&text=${pageTitle}`;
     },
   },
   methods: {
     share() {
-      const url = this.shareUrl;
-      window.open(url, '_blank', 'noopener noreferrer');
+      window.open(this.shareUrl, '_blank', 'noopener noreferrer');
     },
   },
 });

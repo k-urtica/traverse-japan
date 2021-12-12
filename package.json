@@ -19,6 +19,7 @@
     "nuxt-edge": "latest",
     "sharp": "^0.29.3",
     "text-to-svg": "^3.1.5",
+    "vue-color": "^2.8.1",
     "vue-typer": "^1.2.0",
     "vuetify": "^2.5.5"
   },
@@ -33,6 +34,7 @@
     "@types/dom-to-image": "^2.6.4",
     "@types/sharp": "^0.29.4",
     "@types/text-to-svg": "^3.1.1",
+    "@types/vue-color": "^2.4.3",
     "@vercel/node": "^1.12.1",
     "babel-eslint": "^10.1.0",
     "eslint": "^8.3.0",
