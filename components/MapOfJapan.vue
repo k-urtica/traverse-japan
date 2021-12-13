@@ -145,7 +145,7 @@ export default Vue.extend({
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
 
-    @media (hover: hover) {
+    @media screen and (min-width: 600px) {
       &:hover {
         fill: var(--fill-hover) !important;
         stroke-width: 2px;
