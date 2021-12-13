@@ -5,22 +5,34 @@ import TextToSVG from 'text-to-svg';
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 
 const FONT = path.resolve(__dirname, '../assets/font/Mamelon-for-ogp.otf');
+const DEFAULT_COLOR = {
+  base: '#e3f2fd',
+  visited: '#f8bbd0',
+  stroke: '#d32f2f',
+};
 
 export default async (req: VercelRequest, res: VercelResponse) => {
-  const { pref } = req.query;
+  const { pref, bc, vc } = req.query;
   const codes = (pref as string)?.match(/.{2}/g);
 
   const svg = fs.readFileSync(path.resolve(__dirname, '../assets/img/map-mobile.svg'));
   const svgWkString = svg.toString('utf-8');
 
+  const baseColor = bc ? (bc as string) : DEFAULT_COLOR.base;
+  const fillColor = vc ? (vc as string) : DEFAULT_COLOR.visited;
+
   let svgString = '';
   if (codes) {
-    let dc;
+    let dataCode;
     for (let s of svgWkString.split(/\r\n|\n/)) {
-      dc = s.match(/data-code="[0-9]{2}/);
-      // urlクエリに存在するcodeの場合、該当のdata-code行のfill styleを変更する
-      if (dc !== null && codes.includes(dc[0].slice(-2))) {
-        s = s.replace(/fill="(.*?)"/, 'fill="#f8bbd0"');
+      dataCode = s.match(/data-code="[0-9]{2}/);
+      // data-code行のfill styleを変更する
+      if (dataCode !== null) {
+        if (codes.includes(dataCode[0].slice(-2))) {
+          s = s.replace(/fill="(.*?)"/, `fill="${fillColor}"`);
+        } else {
+          s = s.replace(/fill="(.*?)"/, `fill="${baseColor}"`);
+        }
       }
       svgString += s;
     }
