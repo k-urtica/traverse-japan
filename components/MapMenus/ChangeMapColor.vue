@@ -53,7 +53,9 @@
 <script lang="ts">
 import Vue from 'vue';
 import { mdiPalette, mdiCheckOutline } from '@mdi/js';
-import { Chrome } from 'vue-color';
+// バンドルサイズ縮小のため使用するpickerのみインポートする
+// import { Chrome } from 'vue-color';
+import Chrome from 'vue-color/src/components/Chrome.vue';
 import GlassButton from '@/components/GlassParts/GlassButton.vue';
 import { MapModule } from '@/store';
 import { MapColors } from '@/store/map';
