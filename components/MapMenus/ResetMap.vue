@@ -24,6 +24,7 @@ export default Vue.extend({
   },
   methods: {
     resetMap() {
+      MapModule.resetColor();
       MapModule.resetMap();
     },
   },
