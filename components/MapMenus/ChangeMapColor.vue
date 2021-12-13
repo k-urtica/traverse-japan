@@ -123,7 +123,7 @@ export default Vue.extend({
 .vc-chrome {
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: none;
+  box-shadow: rgba(255, 255, 255, 0.25) 0px 0px 12px;
 }
 
 .color-dialog {

@@ -2,9 +2,11 @@
   <v-footer elevation="16" padless dark color="#1a1a1a">
     <v-container class="text-center py-6">
       <div class="mb-6">
-        <v-btn text rounded class="text-none footer-item" to="/about" nuxt> About </v-btn>
+        <v-btn outlined rounded class="text-none footer-item" to="/about" nuxt>
+          About
+        </v-btn>
         <v-btn
-          text
+          outlined
           rounded
           class="text-none footer-item"
           href="https://github.com/k-urtica/traverse-japan"
@@ -25,6 +27,6 @@
 <style lang="scss" scoped>
 .footer-item {
   margin: 0 0.4rem;
-  box-shadow: rgba(104, 125, 243, 0.6) 0px 0px 12px;
+  box-shadow: rgba(104, 125, 243, 0.73) 0px 0px 16px;
 }
 </style>
