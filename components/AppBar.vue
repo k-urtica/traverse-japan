@@ -15,7 +15,13 @@
       offset-y
     >
       <template #activator="{ on, attrs }">
-        <v-btn icon class="mx-1" v-bind="attrs" v-on="on">
+        <v-btn
+          icon
+          class="mx-1"
+          v-bind="attrs"
+          aria-label="使い方メニューの開閉"
+          v-on="on"
+        >
           <v-icon>{{ mdiHelpCircleOutline }}</v-icon>
         </v-btn>
       </template>
