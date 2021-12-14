@@ -12,7 +12,7 @@ const DEFAULT_COLOR = {
   base: '#e3f2fd',
   visited: '#f8bbd0',
   hover: '#f8bbd0',
-  stroke: '#d32f2f',
+  stroke: '#ec407a',
 };
 
 export type MapColors = {
