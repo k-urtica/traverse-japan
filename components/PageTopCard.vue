@@ -1,20 +1,9 @@
 <!-- eslint-disable vue/no-v-html -->
 <template>
   <glass-card class="py-4 px-6">
-    <ClientOnly>
-      <h1 class="text-center text-h6 text-sm-h4 mb-2">
-        <vue-typer
-          :repeat="0"
-          erase-style="select-all"
-          :pre-type-delay="300"
-          :type-delay="120"
-          :text="typedText"
-        />
-      </h1>
-    </ClientOnly>
     <div
-      class="text-center white--text mb-3"
-      v-html="budouX('踏破した都道府県を塗りつぶしてみんなに共有しよう👉')"
+      class="grad-text font-weight-bold text-center text-h6 text-sm-h4 py-4 mb-2"
+      v-html="budouX('日本をどれだけ踏破したか、みんなに共有しよう')"
     />
 
     <v-dialog max-width="550">
@@ -56,7 +45,7 @@
         <v-divider dark class="mb-3" />
         <div
           class="pink--text text--lighten-4 text-center"
-          v-html="budouX('...🤔 難しく考えず、旅行した都道府県を塗ろう❗')"
+          v-html="budouX('...🤔 難しく考えず、自分が踏破したと思う都道府県を塗ろう❗')"
         />
       </div>
     </v-dialog>
@@ -68,19 +57,12 @@ import Vue from 'vue';
 import GlassCard from '@/components/GlassParts/GlassCard.vue';
 import { parseBudouX } from '@/utils/AppUtils';
 
-let VueTyper;
-if (process.client) {
-  VueTyper = require('vue-typer').VueTyper;
-}
-
 export default Vue.extend({
   components: {
     GlassCard,
-    VueTyper,
   },
   data() {
     return {
-      typedText: ['日本のここまで踏破した', '日本踏破図🗾'],
       quotation: 'https://kotobank.jp/word/%E8%B8%8F%E7%A0%B4-581166',
     };
   },
@@ -93,9 +75,12 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-.vue-typer ::v-deep .custom.char {
-  color: #ffca28;
-  text-shadow: rgba(255, 255, 255, 0.4) 0px 0px 8px;
+.grad-text {
+  background: linear-gradient(to right, #1fa2ff, #12d8fa, #a6ffcb);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: rgba(255, 255, 255, 0.35) 0px 0px 8px;
 }
 
 .dialog-btn {

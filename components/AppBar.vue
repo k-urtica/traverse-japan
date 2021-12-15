@@ -2,7 +2,10 @@
 <template>
   <v-app-bar app flat color="rgba(20,20,20,0.15)" dark>
     <v-toolbar-title tag="h1" class="font-weight-bold text-h5">
-      <button @click="backToHome()">日本踏破図<span class="emoji">🗾</span></button>
+      <button @click="backToHome()">
+        <span class="grad-text">日本踏破図</span>
+        <span class="emoji">🗾</span>
+      </button>
     </v-toolbar-title>
 
     <v-spacer />
@@ -82,6 +85,13 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+.grad-text {
+  background: linear-gradient(to right, #acb6e5, #86fde8);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .menu-card {
   background-image: linear-gradient(
       45deg,
