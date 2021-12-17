@@ -1,69 +1,37 @@
-# traverse-japan
+<h1 align="center">日本踏破図🗾</h1>
+<h3 align="center">踏破した都道府県を日本地図で共有できるサービス</h3>
 
-## Build Setup
+![日本踏破図🗾](https://user-images.githubusercontent.com/46732829/146545546-10af8666-154e-4056-b259-11f9f34bd113.png)
 
-```bash
-# install dependencies
-$ yarn install
+<p align="center">
+	<a href="https://gitmoji.carloscuesta.me">
+		<img src="https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg?style=flat-square"
+			 alt="Gitmoji" />
+	</a>
+  <a href="https://github.com/prettier/prettier">
+    <img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square" alt="prettier" />
+  </a>
+  <a href="/LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat" alt="MIT LICENCE" />
+  </a>
+</p>
 
-# serve with hot reload at localhost:3000
-$ yarn dev
+## 日本踏破図🗾について
 
-# build for production and launch server
-$ yarn build
-$ yarn start
+日本踏破図🗾は、踏破したことがある都道府県を日本地図でみんなに共有できるWebサービスです😉
+NuxtJS × Vuetifyで構築して、Vercelへデプロイしています🚀
 
-# generate static project
-$ yarn generate
-```
+## URL
+[https://traverse-japan.vercel.app/](https://traverse-japan.vercel.app/)
 
-For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
+## Author
 
-## Special Directories
+👀 **K**
 
-You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
+- Twitter: [@k_urtica](https://twitter.com/k_urtica)
+- Github: [@k-urtica](https://github.com/k-urtica)
 
-### `assets`
+## 📄 License
 
-The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
-
-### `components`
-
-The components directory contains your Vue.js components. Components make up the different parts of your page and can be reused and imported into your pages, layouts and even other components.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/components).
-
-### `layouts`
-
-Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
-
-
-### `pages`
-
-This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/get-started/routing).
-
-### `plugins`
-
-The plugins directory contains JavaScript plugins that you want to run before instantiating the root Vue.js Application. This is the place to add Vue plugins and to inject functions or constants. Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to plugins in `nuxt.config.js`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins).
-
-### `static`
-
-This directory contains your static files. Each file inside this directory is mapped to `/`.
-
-Example: `/static/robots.txt` is mapped as `/robots.txt`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/static).
-
-### `store`
-
-This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+Copyright © 2021 [日本踏破図🗾](https://github.com/k-urtica/traverse-japan).<br />
+This project is [MIT](https://opensource.org/licenses/MIT) licensed.
