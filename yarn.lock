@@ -2087,9 +2087,9 @@
     source-map "^0.6.1"
 
 "@types/vue-color@^2.4.3":
-  version "2.4.3"
-  resolved "https://registry.yarnpkg.com/@types/vue-color/-/vue-color-2.4.3.tgz#a5bf386d4606ed158cba5d5a20e0f10f01860f01"
-  integrity sha512-BCtwKNPi+XUklM9TdQL0Oo86XL9B+DxXpWnNeuMXt0iWdzjmOfyAsCAcxBTxC7mLcWup3T76oP+dsuRwtuh/gQ==
+  version "2.4.4"
+  resolved "https://registry.yarnpkg.com/@types/vue-color/-/vue-color-2.4.4.tgz#c7b020659a07f74e18d83102a2752e0b0afb45fe"
+  integrity sha512-vFPe/t9kJqJnALkdloMR88LPb8YdlNZiGsQkwjyol/r6NZn6eERLYji+URLj72xaprLfS1IGuovxiE2q8B2VGw==
   dependencies:
     vue "^2.0.0"
 
