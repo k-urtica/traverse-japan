@@ -19,7 +19,11 @@
 ## 日本踏破図🗾について
 
 日本踏破図🗾は、踏破したことがある都道府県を日本地図でみんなに共有できるWebサービスです😉
-NuxtJS × Vuetifyで構築して、Vercelへデプロイしています🚀
+
+- NuxtJS(Nuxt Bridge) × Vuetify🔧
+- Nitro Engineを利用したVercelへのSSRデプロイ⚡
+- Serverless Functionsによる動的OGP👍
+- Glassmorphism(グラスモーフィズム)なデザイン🧊
 
 ## URL
 [https://traverse-japan.vercel.app/](https://traverse-japan.vercel.app/)
@@ -33,5 +37,7 @@ NuxtJS × Vuetifyで構築して、Vercelへデプロイしています🚀
 
 ## 📄 License
 
-Copyright © 2021 [日本踏破図🗾](https://github.com/k-urtica/traverse-japan).<br />
+Copyright © 2021 [日本踏破図🗾](https://github.com/k-urtica/traverse-japan).
+
 This project is [MIT](https://opensource.org/licenses/MIT) licensed.
+※マメロンフォント(Mamelon)は[もじワク研究](https://moji-waku.com/index.html)のライセンスです
