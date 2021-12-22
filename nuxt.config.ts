@@ -130,6 +130,9 @@ export default defineNuxtConfig({
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    extractCSS: true,
+    // @ts-ignore
+    extractCSS: {
+      ignoreOrder: true,
+    },
   },
 });
