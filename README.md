@@ -26,7 +26,7 @@
 - Glassmorphism(グラスモーフィズム)なデザイン🧊
 
 ## URL
-[https://traverse-japan.vercel.app/](https://traverse-japan.vercel.app/)
+[https://traverse-japan.dev/](https://traverse-japan.dev/)
 
 ## Author
 
@@ -40,4 +40,5 @@
 Copyright © 2021 [日本踏破図🗾](https://github.com/k-urtica/traverse-japan).
 
 This project is [MIT](https://opensource.org/licenses/MIT) licensed.
+
 ※マメロンフォント(Mamelon)は[もじワク研究](https://moji-waku.com/index.html)のライセンスです
