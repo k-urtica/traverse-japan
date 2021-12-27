@@ -122,7 +122,15 @@ export default defineNuxtConfig({
     ],
   ],
 
-  modules: [['@nuxtjs/sitemap', { hostname: BASE_URL, gzip: true }]],
+  modules: [
+    [
+      '@nuxtjs/google-gtag',
+      {
+        id: process.env.GTAG_ID,
+      },
+    ],
+    ['@nuxtjs/sitemap', { hostname: BASE_URL, gzip: true }],
+  ],
 
   publicRuntimeConfig: {
     baseURL: BASE_URL,
